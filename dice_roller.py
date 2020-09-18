@@ -2,10 +2,23 @@ import random
 
 def main():
 
-  roll = random.randint(1,6) 
+  dice_rolls = int(input('How many dice would you like to roll? '))
+  dice_size = int(input('How many sides are the dice? '))
+  dice_sum = 0
 
-  #use f and put var inside {} in str to print variable within string
-  print(f'You rolled a {roll}')
+  for i in range(0,dice_rolls):
+
+    roll = random.randint(1,dice_size) 
+    dice_sum += roll
+    #use f and put var inside {} in str to print variable within string
+    if roll == 1:
+      print(f'You rolled a {roll}! Critical Fail')
+    elif roll == dice_size:
+      print(f'You rolled a {roll}! Critical Success!')
+    else:
+      print(f'You rolled a {roll}')
+
+  print(f'You have rolled a total of {dice_sum}')
 
 
 if __name__== "__main__":
